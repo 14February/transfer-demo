@@ -1,0 +1,21 @@
+<beans>
+
+    <bean id="transferService" class="com.learn.service.impl.TransferServiceImpl">
+        <property ref="transferDao"></property>
+    </bean>
+
+    <bean id="transferDao" class="com.learn.dao.impl.TransferDaoImpl">
+        <property ref="connUtils"/>
+    </bean>
+
+    <bean id="connUtils" class="com.learn.utils.ConnUtils"/>
+
+    <bean id="transactionManagerUtils" class="com.learn.utils.TransactionManagerUtils">
+        <property ref="connUtils"/>
+    </bean>
+
+    <bean id="proxyFactory" class="com.learn.factory.ProxyFactory">
+        <property ref="transactionManagerUtils"/>
+    </bean>
+
+</beans>
