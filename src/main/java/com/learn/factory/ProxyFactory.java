@@ -29,6 +29,8 @@ public class ProxyFactory {
                     } catch (Exception e) {
                         transactionManagerUtils.rollbackTrans();
                         throw new Exception(e.getMessage());
+                    } finally {
+                        transactionManagerUtils.release();
                     }
                     return res;
                 });

@@ -26,4 +26,8 @@ public class ConnUtils {
         return conn;
     }
 
+    public void remove() {
+        threadLocal.remove();
+    }
+
 }

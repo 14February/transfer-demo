@@ -42,7 +42,7 @@ public class TransferServiceImpl implements TransferService {
         fromAccount.setBalance(fromAccount.getBalance() - Long.valueOf(money));
         toAccount.setBalance(toAccount.getBalance() + Long.valueOf(money));
         int count = transferDao.updateAccountByCardNo(fromAccount);
-        int num = 10 / 0;
+//        int num = 10 / 0;
         int i = transferDao.updateAccountByCardNo(toAccount);
     }
 }

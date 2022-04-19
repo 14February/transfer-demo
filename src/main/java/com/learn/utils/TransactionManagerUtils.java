@@ -25,4 +25,10 @@ public class TransactionManagerUtils {
         connUtils.getConn().rollback();
     }
 
+    // 释放连接
+    public void release() throws SQLException {
+        connUtils.getConn().close();
+        connUtils.remove();
+    }
+
 }
